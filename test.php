@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO login (email,password)
-VALUES ('$email','$password')";
+VALUES ($email,$password)";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
