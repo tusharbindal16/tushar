@@ -1,6 +1,6 @@
 <?php
 $servername = "35.223.220.76";
-$username = "root";
+$username = "newr";
 $password = "password";
 $dbname = "testdb";
 $email=$_POST["email1"];
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO login (email,password)
-VALUES ($email,$password)";
+VALUES ('$email','$password')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
