@@ -1,6 +1,6 @@
 <?php
 $servername = "35.223.220.76";
-$username = "root";
+$username = "newr";
 $password = "password";
 $dbname = "testdb";
 $email=$_POST["email1"];
