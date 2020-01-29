@@ -10,15 +10,10 @@ $conn = new mysqli($servername, $username, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "INSERT INTO login (email,password)
-VALUES ('$email','$pass')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
-
+$sql = "SELECT Email FROM register WHERE Email='".$email."'";
+$result = $conn->query($sql);
+if($result->num_rows >= 1) {
+    echo "Login Successfully";
+} 
 $conn->close();
 ?>
