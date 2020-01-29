@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<style>
+			h1{
+			background-color:green;
+			text-align:center;
+			}
+			table{
+				border: 1px solid powderblue;
+				border-spacing:50px;
+				border-radius:20px;
+				margin:auto;
+				width:80%;
+				}
+			
+			.id1
+			{
+				padding:10px;
+				border-radius:20px;
+				width:100%;
+				font-size:20px;
+			}
+			td
+			{
+				margin-top:15px;
+			}
+			.id2{
+				padding:10px;
+				font-size:20px;
+			}
+			
+		
+		</style>
+		<script>
+			 function validateEmail(){
+				
+				var email=document.form1.val;
+       				 var reg =/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+				console.log(email);
+				console.log(email.value);
+
+        			 if (reg.test(email.value) == false) 
+      			 	 {
+            				alert('Invalid Email Address');
+           			 	return false;
+       				 }
+			
+			
+				var x= document.form1.phone.value;
+				var z= x.toString().length;
+				console.log(z);
+				if(z!=10)
+				{
+					alert("wrong Number");
+					return false;
+				}
+				console.log("tushar");
+
+				var y= document.form1.pass.value;
+				var p= document.form1.pass1.value;
+alert(y);
+alert(p);
+
+				console.log(y);
+				console.log(p);
+				//return false;
+				if(y!=p)
+				{
+					alert("wrong password");
+					return false;
+				}
+				else
+				{
+					alert("hello");
+				}
+			}
+		</script>
+		
+	</head>
+	<body >
+
+		<h1>Application Form</h1>
+		<form name="form1" action="http://35.223.220.76/tushar/newtest.php" method="POST" onsubmit=" return validateEmail()" >
+			<table style="background-color:lightblue;">
+			<tr >
+				<th class="id2">First name:</th>
+				<td ><input class="id1" type="text" name="First_name" placeholder="First Name" required></td>
+				
+			</tr>
+			<tr>
+				<th class="id2" >Last name:</th>
+				<td ><input class="id1" type="text" name="Last_name" placeholder="Last Name" required></td>
+				
+			</tr>
+			<tr >
+				<th class="id2" >D.O.B: </th>
+				<td><input class="id1" type="date" name="DOB" required></td>
+			</tr> 
+			<tr>
+				<th class="id2" >Email:</th>
+				<td> <input class="id1" type="text" name="val" required></td>
+			</tr>
+			<tr>
+				<th class="id2" >Phone No.:</th>
+				<td> <input class="id1" type="number" placeholder="xxxxxxxxxx" name="phone" required></td>
+			</tr>
+			<tr>
+				<th class="id2" >Gender:</th>
+				<td><input type="radio" name="gender" checked>Male
+					<input type="radio" name="gender">Female
+					<input type="radio" name="gender">Others
+			</tr>
+			<tr>
+				<th class="id2" colspan=3>Address:</th>
+			</tr>
+			<tr>
+				<th class="id2" >House No.:</th>
+				<td><input class="id1" type="number" min=1 max=10000 name="h_no" required></td>
+			</tr>
+			<tr>
+				<th class="id2" >Locality:</th>
+				<td><input class="id1" type="text" name="locality" required></td>
+			</tr>
+			<tr>
+				<th class="id2" >City:</th>
+				<td><select class="id1" name="city">
+					<option>Sohna</option>
+					<option>Gurgaon</option>
+					<option >Delhi</option>
+				</td>
+			</tr>
+			<tr>
+				<th class="id2" >State:</th>
+				<td><input class="id1" type="text" autocomplete="on" name="state" required></td>
+			</tr>
+			<tr>
+				<th class="id2" >Password:</th>
+				<td><input class="id1" type="password" name="pass" required></td>
+			</tr>
+			<tr>
+				<th class="id2" >Confirm Password:</th>
+				<td><input class="id1" type="password" name="pass1" required></td>
+			</tr>
+			<tr>
+				<td><button type="submit" class="id1" style="position:relative; left:350px;" colspan=2 >Submit</button></td>
+			</tr>
+
+		</table>
+		</form>
+
+
+	</body>
+</html>
