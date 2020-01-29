@@ -10,10 +10,13 @@ $conn = new mysqli($servername, $username, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT Email,Pass FROM register WHERE Email='".$email."'" AND Pass='".$pass."'";
+$sql = "SELECT Email, Pass FROM register WHERE Pass='".$pass."' AND Email='".$email."'";
 $result = $conn->query($sql);
 if($result->num_rows >= 1) {
     echo "Login Successfully";
 } 
+else{
+        echo "login unsuccessfull";
+}
 $conn->close();
 ?>
