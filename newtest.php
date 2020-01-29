@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 }
 
 $sql = "INSERT INTO register(FirstName,LastName,DOB,Email,Phone,GENDER,HouseNumber,Locality,city,State,Pass)
-VALUES ($fname,$lname,$dob,$email,$mobile,$gen,$hnumber,$local,$city,$state,$pass)";
+VALUES ('$fname','$lname','$dob','$email','$mobile','$gen','$hnumber','$local','$city','$state','$pass')";
 
 if ($conn->query($sql) === TRUE) {
     echo "New record created successfully";
