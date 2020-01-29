@@ -15,7 +15,7 @@ $city=$_POST["city"];
 $state=$_POST["state"];
 $pass=$_POST["pass1"];
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
