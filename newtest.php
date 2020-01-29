@@ -19,7 +19,7 @@ $conn = new mysqli($servername, $username, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-$sql = "SELECT 'Email' FROM register WHERE 'Email'='".$email."'";
+$sql = "SELECT Email FROM register WHERE Email='".$email."'";
 $result = $conn->query($sql);
 if($result->num_rows >= 1) {
     echo "Email or Username already exist, try something else.";
