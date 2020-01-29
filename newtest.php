@@ -19,15 +19,20 @@ $conn = new mysqli($servername, $username, $dbpass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
-$sql = "INSERT INTO register(FirstName,LastName,DOB,Email,Phone,GENDER,HouseNumber,Locality,city,State,Pass)
-VALUES ('$fname','$lname','$dob','$email','$mobile','$gen','$hnumber','$local','$city','$state','$pass')";
-
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+$sql = "SELECT 'Email' FROM register WHERE 'Email'='".$email."'";
+$result = $conn->query($sql);
+if($result->num_rows >= 1) {
+    echo "Email or Username already exist, try something else.";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
 
+        $nsql = "INSERT INTO register(FirstName,LastName,DOB,Email,Phone,GENDER,HouseNumber,Locality,city,State,Pass)
+        VALUES ('$fname','$lname','$dob','$email','$mobile','$gen','$hnumber','$local','$city','$state','$pass')";
+
+        if ($conn->query($nsql) === TRUE) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+}
 $conn->close();
 ?>
