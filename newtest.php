@@ -20,7 +20,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO register
+$sql = "INSERT INTO register(FirstName,LastName,DOB,Email,Phone,GENDER,HouseNumber,Locality,city,State,Pass)
 VALUES ($fname,$lname,$dob,$email,$mobile,$gen,$hnumber,$local,$city,$state,$pass)";
 
 if ($conn->query($sql) === TRUE) {
